@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/logo.svg" width="96" height="96" alt="LinkReacher" />
+  <img src="assets/icon-96.png" width="96" height="96" alt="LinkReacher" />
 </p>
 
 <h1 align="center">LinkReacher MCP</h1>
@@ -255,9 +255,13 @@ LinkReacher is pay as you go. There is no per seat or per email metering in the 
 | Autopilot (auto discover, auto campaign, auto send) | No | Yes |
 
 **Gating is server enforced.** A free plan call to a Pro tool returns a normal tool result with
-`isError: true` and a message pointing at the upgrade page, never a raw 403 JSON. Discover costs are
-bounded by a global daily API spend cap. `get_costs` reports today's spend, and `get_me` reports
-your remaining free contact search budget so the assistant can self check instead of failing blind.
+`isError: true` and a message pointing at the upgrade page, never a raw 403 JSON.
+
+**Discovery and contact finding are not metered.** You are never billed per call, per keyword or per
+search, and there is no usage ceiling on Pro: run discovery and enrichment as often as you want.
+Free workspaces are limited to 15 contact reveals and a sample of the engagement list, which is the
+only customer facing limit in the MCP surface. We do keep internal API spend guardrails for our own
+costs (visible through `get_costs`); those exist for us and never surface to you as a limit or a bill.
 
 ---
 
@@ -327,6 +331,14 @@ Merge tokens in templates and campaign steps: `{{first_name}}`, `{{company}}`, `
 
 ---
 
+<p align="center">
+  <img src="assets/mascot.svg" width="200" alt="LinkReacher mascot" />
+</p>
+
+<p align="center"><em>You are halfway through a README. Respect. The mascot would like you to close the tab and go find some backlinks.</em></p>
+
+---
+
 ## Prompts reference
 
 | Prompt | Arguments | What it drives |
@@ -360,7 +372,7 @@ transport stays `200`, and the model can read the message and recover.
 
 - **Nothing sends by accident.** `start_campaign`, `send_now`, `reply` and `compose_email` are annotated as email senders. `preview_next_send` renders exactly what would go out.
 - **Idempotent where it matters.** Duplicate keywords and contacts, plus cross workspace writes, are rejected rather than duplicated. Prospect to campaign ingestion is idempotent per prospect.
-- **Cost is bounded.** Discovery and enrichment draw on PAYG APIs, capped by a global daily spend limit. `get_costs` shows today's spend. When the cap is hit, expensive calls return empty instead of spending.
+- **Unmetered, not unlimited chaos.** Discovery and contact finding carry no customer usage limit on Pro. Run them as often as you like.
 - **Free contact reveals** are counted per workspace. `get_me` reports used and remaining.
 - **No warmup, no rotation, no tracking pixels.** Plain text outreach only.
 
@@ -481,7 +493,3 @@ ingest the official registry record.
 
 MIT. See [LICENSE](LICENSE). This covers this repository (docs and metadata). The LinkReacher
 service itself is proprietary and governed by its terms of service.
-
-<p align="center">
-  <img src="assets/mascot.svg" width="180" alt="LinkReacher mascot" />
-</p>
