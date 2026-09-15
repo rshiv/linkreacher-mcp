@@ -265,14 +265,6 @@ costs (visible through `get_costs`); those exist for us and never surface to you
 
 ---
 
-<p align="center">
-  <img src="assets/mascot.svg" width="200" alt="LinkReacher mascot" />
-</p>
-
-<p align="center"><em>You are halfway through a README. Respect. The mascot would like you to close the tab and go find some backlinks.</em></p>
-
----
-
 ## Native rendering: tables, links and prompts
 
 The server is built so results **feel native** in chat clients instead of dumping JSON.
@@ -454,7 +446,7 @@ key per client or teammate so you can revoke individually.
 ```
 README.md          Setup, auth, plans, rendering, troubleshooting
 server.json        Official MCP Registry metadata (remote record)
-assets/            Logo, favicon and mascot pulled from linkreacher.com
+assets/            Logo and favicon pulled from linkreacher.com
 examples/          Copy paste client configs and scripts
 LICENSE
 ```
