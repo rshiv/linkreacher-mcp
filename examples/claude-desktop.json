@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "linkreacher": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote",
+        "https://api.linkreacher.com/mcp",
+        "--header",
+        "Authorization: Bearer lr_your_api_key"
+      ]
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "linkreacher": {
+      "type": "http",
+      "url": "https://api.linkreacher.com/mcp",
+      "headers": {
+        "Authorization": "Bearer lr_your_api_key"
+      }
+    }
+  }
+}
